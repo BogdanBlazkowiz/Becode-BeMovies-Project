@@ -58,6 +58,10 @@ table {
   border-spacing: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .small-text {
   font-family: Inter;
   font-size: 16px;
@@ -93,7 +97,7 @@ header {
 header .header-wrapper {
   display: grid;
   padding-right: 12.5%;
-  grid-template-columns: 163px calc(37.71vw - 0%) 25.97vw 12.5%;
+  grid-template-columns: 163px 37.71vw 25.97vw;
 }
 header .header-wrapper img {
   width: 163px;
@@ -282,5 +286,56 @@ main .search-box .input-wrapper div img {
     width: 100%;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
+  }
+}
+footer {
+  background-color: #141517;
+  height: 100px;
+  padding-top: 26px;
+  margin-top: 109px;
+}
+footer .footer-wrapper {
+  display: grid;
+  padding-right: 12.5%;
+  grid-template-columns: 163px 13.61vw 25.97vw 12.78vw;
+}
+footer .footer-wrapper img {
+  width: 163px;
+  height: 43px;
+}
+footer .footer-wrapper ul {
+  margin-top: 16px;
+  grid-column: 3/3;
+  display: flex;
+  gap: 2.15vw;
+}
+footer .footer-wrapper ul .menu-element a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white !important;
+}
+footer .footer-wrapper div {
+  grid-column: 5/6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-wrapper div span {
+  width: 161px;
+  height: 17px;
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.79px;
+  text-align: left;
+  color: #B8B8B8;
+}
+
+@media screen and (max-width: 1000px) {
+  footer {
+    grid-template-columns: 163px 13.61vw 44.83vw;
+  }
+  footer ul {
+    gap: 3.71vw;
   }
 }/*# sourceMappingURL=styles.css.map */
