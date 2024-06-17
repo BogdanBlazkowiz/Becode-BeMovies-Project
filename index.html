@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Bemovies Project</title>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <img src="img/BeMovies.svg" alt="BeMovies Logo">
+            <ul>
+                <li class="menu-element"><a class="menu-text" id="search" href="#">Search</a></li>
+                <li class="menu-element"><a class="menu-text" id="latest" href="#">Latest</a></li>
+                <li class="menu-element"><a class="menu-text" id="genres" href="#">Genres</a></li>
+                <li class="menu-element"><a class="menu-text" id="register" href="#">Register</a></li>
+                <li class="menu-element"><a class="menu-text" id="login" href="#">Login</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="search-box">
+            <div class="input-wrapper">
+                <input type="text" class="search-box-input">
+                <div class="search-box-input-submit">
+                    <img src="img/arrow.svg">
+                </div>
+            </div>
+        </div>
+        <div class="results-container reusable-swiper-container">
+            <span class="small-text">Results for </span>
+            <!-- Slider main container -->
+            <div class="swiper swiper1">
+            <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                <!-- Slides -->
+                    <div class="swiper-slide"><img src="img/Rectangle 2.svg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Rectangle 3.svg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Rectangle 4.svg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Rectangle 5.svg" alt=""></div>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev swiper1"></div>
+                <div class="swiper-button-next swiper1"></div>
+
+            </div>
+
+        </div>
+        <div class="lastest-container reusable-swiper-container">
+            <span class="small-text">Latest Releases</span>
+            <!-- Slider main container -->
+            <div class="swiper swiper2">
+            <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                <!-- Slides -->
+                    <div class="swiper-slide"><img src="img/Rectangle 2.svg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Rectangle 3.svg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Rectangle 4.svg" alt=""></div>
+                    <div class="swiper-slide"><img src="img/Rectangle 5.svg" alt=""></div>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev swiper2"></div>
+                <div class="swiper-button-next swiper2"></div>
+
+            </div>
+
+        </div>
+    </main>
+    <div class="categories-container">
+        <span class="small-text">Movies by genre</span>
+        <div class="genres-container">
+            <ul>
+                <li>
+                    <div><span>Comedy</span></div>
+                </li>
+                <li>
+                    <div><span>Drama</span></div>
+                </li>
+                <li>
+                    <div><span>Action</span></div>
+                </li>
+                <li>
+                    <div><span>Romance</span></div>
+                </li>
+                <li>
+                    <div><span>Fantasy</span></div>
+                </li>
+                <li>
+                    <div><span>Animation</span></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</html>
