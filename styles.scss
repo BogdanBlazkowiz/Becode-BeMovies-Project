@@ -38,6 +38,9 @@ body {
 	line-height: 1;
     width: 100%;
 }
+img {
+    width: 100%;
+}
 ol, ul {
 	list-style: none;
 }
@@ -88,7 +91,6 @@ header {
     padding-top: 26px;
     .header-wrapper {
         display: grid;
-        border: 1px solid red;
         padding-right: 12.5%;
         grid-template-columns: 163px calc(37.71vw - 0%) 25.97vw 12.5%;
         img {
@@ -124,7 +126,7 @@ main {
     display: grid;
     padding-top: 73px;
     gap: 72px;
-    grid-template-rows: 44px;
+    grid-template-rows: 44px 380px 380px 519px;
     .search-box {
         padding: 0 calc(0.5 * calc(70vw - 15.83vw - 3.06vw));
         .input-wrapper {
@@ -187,6 +189,10 @@ main {
     height: 351px;
     .swiper-wrapper {
         padding-left: 44px;
+        img {
+            width: 234px;
+            height: 351px;
+        }
     }
     .swiper-button-prev {
         content: url(/img/previous-button.svg);
@@ -197,5 +203,115 @@ main {
 }
 
 .latest-container {
-    padding-top: 23px;
+    margin-top: 23px;
+}
+.categories-container {
+    width: 74.65vw;
+    height: 519px;
+    margin-top: 23px;
+    .text-container {
+        .top-span {
+            position: relative;
+            left: calc(50% - 62.5px);
+            width: 125px;
+        }
+        .genres-container {
+            position: relative;
+            left: calc(50% - 20.73vw);
+            margin-top: 46px;
+            width: 41.46vw/*597px*/;
+            ul {
+                width: 41.46vw;
+                display: inline-grid !important;
+                gap: 1.5vw;
+                grid-template-columns: auto auto auto auto auto auto;
+                grid-template-rows: auto;
+                li {
+                    div:hover {
+                        opacity: 0.7;
+                        background-color: $background_dark;
+                    }
+                    div {
+                        width: fit-content;
+                        height: 33px;
+                        border-radius: 8px;
+                        background-color: $background_not_as_dark;
+                        display: flex;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        span {
+                            height: 19px;
+                            text-align: center;
+                        }
+                    }
+                    .selected:hover {
+                        opacity: 0.7;
+                        background-color: $red;
+                    }
+                    .selected {
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+
+        .genres-line {
+            position: relative;
+            margin-left: calc(50vw - 20.8vw);
+            width: 41.6vw;
+            height: 0px;
+            border: 1px solid #FFFFFF;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 19px;
+        }
+    }
+    .categories-swiper-container {
+        margin-top: 29px;
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    .categories-container {
+        .text-container {
+            .genres-container {
+                ul {
+                    grid-template-columns: auto auto auto;
+                    grid-template-rows: auto auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .categories-container {
+        .text-container {
+            .genres-container {
+                ul {
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto auto;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 475px) {
+    .categories-container {
+        .text-container {
+            .genres-container {
+                left: calc(50% - 30.73vw);
+                width: 61.46vw/*597px*/;
+                ul {
+                    width: 100%;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto auto;
+                }
+            }
+        }
+    }
 }
