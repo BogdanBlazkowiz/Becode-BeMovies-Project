@@ -56,7 +56,7 @@ async function searchMovieByKeyword(keyword) {
 
 // Function to fetch and display the latest movies
 async function fetchLatestMovies() {
-  let currentYear = new Date().getFullYear();
+  let currentDate = new Date().toISOString().slice(0, 10);
   const options = {
     method: "GET",
     headers: {
@@ -67,7 +67,7 @@ async function fetchLatestMovies() {
 
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`,
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&primary_release_date.lte=${currentDate}&sort_by=primary_release_date.desc&vote_count.gte=30`,
       options
     );
 
