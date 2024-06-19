@@ -932,4 +932,7 @@ footer .footer-wrapper div span {
     grid-column: 1/1;
     grid-row: 2/3;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+.results-container {
+  display: none;
+}
