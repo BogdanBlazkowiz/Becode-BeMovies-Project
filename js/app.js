@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Function to fetch and display movies based on search keyword
 async function searchMovieByKeyword(keyword) {
-    let resultsWord = document.querySelector(".results-container span");
-    resultsWord.innerText = `Results for "${keyword}"`;
+  let resultsWord = document.querySelector(".results-container span");
+  resultsWord.innerText = `Results for "${keyword}"`;
 
-    let resultsContainer = document.querySelector(".results-container");
-    resultsContainer.style.display = "block";
+  let resultsContainer = document.querySelector(".results-container");
+  resultsContainer.style.display = "block";
 
   const options = {
     method: "GET",
@@ -77,12 +77,13 @@ async function fetchLatestMovies() {
 
     const data = await response.json();
     console.log(data);
-    displayMovies(data.results, ".swiper2"); // Could wrap the data in an array to reuse the display function
+    displayMovies(data.results, ".swiper2"); // Could wrap the data in an array if result is only one movie
   } catch (error) {
     console.error("There has been a problem with your fetch operation:", error);
   }
 }
-//Add by genre
+
+//Fetch by genre
 async function loadMoviesByGenre(genre) {
   const genreId = getGenreId(genre);
 
@@ -111,6 +112,7 @@ async function loadMoviesByGenre(genre) {
     console.error("There has been a problem with your fetch operation:", error);
   }
 }
+
 function getGenreId(genre) {
   const genres = {
     comedy: 35,
