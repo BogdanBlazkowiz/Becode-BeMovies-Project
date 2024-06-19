@@ -114,15 +114,29 @@ async function loadMoviesByGenre(genre) {
 }
 
 function getGenreId(genre) {
-  const genres = {
-    comedy: 35,
-    drama: 18,
-    action: 28,
-    romance: 10749,
-    fantasy: 14,
-    animation: 16,
-    // Add more genre mappings as needed
-  };
+    const genres = {
+        action: 28,
+        adventure: 12,
+        animation: 16,
+        comedy: 35,
+        crime: 80,
+        documentary: 99,
+        drama: 18,
+        family: 10751,
+        fantasy: 14,
+        history: 36,
+        horror: 27,
+        music: 10402,
+        mystery: 9648,
+        romance: 10749,
+        scienceFiction: 878,
+        tvMovie: 10770,
+        thriller: 53,
+        war: 10752,
+        western: 37,
+        //Add more as needed
+    };
+    
 
   return genres[genre] || 35; // Default to comedy if genre not found
 }
@@ -208,17 +222,29 @@ function displayMovies(movies, swiperSelector) {
 
 // Function to get genre names from IDs
 function getGenreName(id) {
-  const genres = {
-    14: "Fantasy",
-    10751: "Family",
-    18: "Drama",
-    53: "Thriller",
-    16: "Animation",
-    28: "Action",
-    10749: "Romance",
-    // Add more genre mappings as needed
-  };
-
+    const genres = {
+        28: "Action",
+        12: "Adventure",
+        16: "Animation",
+        35: "Comedy",
+        80: "Crime",
+        99: "Documentary",
+        18: "Drama",
+        10751: "Family",
+        14: "Fantasy",
+        36: "History",
+        27: "Horror",
+        10402: "Music",
+        9648: "Mystery",
+        10749: "Romance",
+        878: "Science Fiction",
+        10770: "TV Movie",
+        53: "Thriller",
+        10752: "War",
+        37: "Western",
+        //Add more genre mappings as needed
+    };
+    
   return genres[id] || "Unknown";
 }
 
