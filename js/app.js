@@ -26,7 +26,7 @@ async function searchMovieByKeyword(keyword) {
   resultsWord.innerText = `Results for "${keyword}"`;
 
   let resultsContainer = document.querySelector(".results-container");
-  resultsContainer.style.display = "block";
+  resultsContainer.style.display = "grid";
 
   const options = {
     method: "GET",
