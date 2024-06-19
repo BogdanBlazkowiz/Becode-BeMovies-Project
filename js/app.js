@@ -114,29 +114,28 @@ async function loadMoviesByGenre(genre) {
 }
 
 function getGenreId(genre) {
-    const genres = {
-        action: 28,
-        adventure: 12,
-        animation: 16,
-        comedy: 35,
-        crime: 80,
-        documentary: 99,
-        drama: 18,
-        family: 10751,
-        fantasy: 14,
-        history: 36,
-        horror: 27,
-        music: 10402,
-        mystery: 9648,
-        romance: 10749,
-        scienceFiction: 878,
-        tvMovie: 10770,
-        thriller: 53,
-        war: 10752,
-        western: 37,
-        //Add more as needed
-    };
-    
+  const genres = {
+    action: 28,
+    adventure: 12,
+    animation: 16,
+    comedy: 35,
+    crime: 80,
+    documentary: 99,
+    drama: 18,
+    family: 10751,
+    fantasy: 14,
+    history: 36,
+    horror: 27,
+    music: 10402,
+    mystery: 9648,
+    romance: 10749,
+    scienceFiction: 878,
+    tvMovie: 10770,
+    thriller: 53,
+    war: 10752,
+    western: 37,
+    //Add more as needed
+  };
 
   return genres[genre] || 35; // Default to comedy if genre not found
 }
@@ -222,29 +221,29 @@ function displayMovies(movies, swiperSelector) {
 
 // Function to get genre names from IDs
 function getGenreName(id) {
-    const genres = {
-        28: "Action",
-        12: "Adventure",
-        16: "Animation",
-        35: "Comedy",
-        80: "Crime",
-        99: "Documentary",
-        18: "Drama",
-        10751: "Family",
-        14: "Fantasy",
-        36: "History",
-        27: "Horror",
-        10402: "Music",
-        9648: "Mystery",
-        10749: "Romance",
-        878: "Science Fiction",
-        10770: "TV Movie",
-        53: "Thriller",
-        10752: "War",
-        37: "Western",
-        //Add more genre mappings as needed
-    };
-    
+  const genres = {
+    28: "Action",
+    12: "Adventure",
+    16: "Animation",
+    35: "Comedy",
+    80: "Crime",
+    99: "Documentary",
+    18: "Drama",
+    10751: "Family",
+    14: "Fantasy",
+    36: "History",
+    27: "Horror",
+    10402: "Music",
+    9648: "Mystery",
+    10749: "Romance",
+    878: "Science Fiction",
+    10770: "TV Movie",
+    53: "Thriller",
+    10752: "War",
+    37: "Western",
+    //Add more genre mappings as needed
+  };
+
   return genres[id] || "Unknown";
 }
 
@@ -284,3 +283,118 @@ searchButton.addEventListener("click", () => {
 
 // Call the function to fetch and display the latest movies
 fetchLatestMovies();
+
+//form login and signup
+document.addEventListener("DOMContentLoaded", function () {
+  // Get elements
+  const loginLink = document.getElementById("login");
+  const registerLink = document.getElementById("register");
+  const loginPopup = document.querySelector(".login-popup");
+  const registerPopup = document.querySelector(".register-popup");
+  const closeButtons = document.querySelectorAll(".register-login-popup img");
+
+  // Function to show the login form
+  function showLoginForm() {
+    registerPopup.classList.add("hidden");
+    loginPopup.classList.remove("hidden");
+    document
+      .querySelector(".signup-switch-button")
+      .classList.remove("currently-in-use");
+    document
+      .querySelector(".login-switch-button")
+      .classList.add("currently-in-use");
+  }
+
+  // Function to show the register form
+  function showRegisterForm() {
+    loginPopup.classList.add("hidden");
+    registerPopup.classList.remove("hidden");
+    document
+      .querySelector(".signup-switch-button")
+      .classList.add("currently-in-use");
+    document
+      .querySelector(".login-switch-button")
+      .classList.remove("currently-in-use");
+  }
+
+  // Add event listeners to the navbar links
+  loginLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    showLoginForm();
+  });
+
+  registerLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    showRegisterForm();
+  });
+
+  // Add event listeners to switch buttons
+  document.querySelectorAll(".signup-switch-button").forEach((button) => {
+    button.addEventListener("click", showRegisterForm);
+  });
+
+  document.querySelectorAll(".login-switch-button").forEach((button) => {
+    button.addEventListener("click", showLoginForm);
+  });
+
+  // Add event listeners to close buttons
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      loginPopup.classList.add("hidden");
+      registerPopup.classList.add("hidden");
+    });
+  });
+
+  // Basic validation and logging for login form
+  document
+    .querySelector(".login-button")
+    .addEventListener("click", function () {
+      const username = document.querySelector(".login-popup .username").value;
+      const password = document.querySelector(".login-popup .password").value;
+      const rememberMe = document.querySelector(
+        ".login-popup #remember"
+      ).checked;
+
+      if (username && password.length >= 8) {
+        const loginData = { username, password, rememberMe };
+        console.log("Login Data:", loginData);
+        alert("Login successful!");
+      } else {
+        alert(
+          "Please fill in both fields and ensure the password is at least 8 characters long."
+        );
+      }
+    });
+
+  // Basic validation and logging for register form
+  document
+    .querySelector(".signup-button")
+    .addEventListener("click", function () {
+      const username = document.querySelector(
+        ".register-popup .username"
+      ).value;
+      const email = document.querySelector(".register-popup .email").value;
+      const password = document.querySelector(
+        ".register-popup .password"
+      ).value;
+      const passwordConf = document.querySelector(
+        ".register-popup .passwordconf"
+      ).value;
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!username) {
+        alert("Username is required.");
+      } else if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+      } else if (password.length < 8) {
+        alert("Password must be at least 8 characters long.");
+      } else if (password !== passwordConf) {
+        alert("Passwords do not match.");
+      } else {
+        const registerData = { username, email, password };
+        console.log("Sign Up Data:", registerData);
+        alert("Registration successful!");
+      }
+    });
+});
