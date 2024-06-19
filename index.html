@@ -1,221 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <title>Bemovies Project</title>
 
     <template class="slide-template">
-        <img class="movie-poster" src="img/Rectangle 2.svg" alt="">
-            <div class="hover-preview">
-                <span class="title">The Godfather Part III</span>
-                <span class="year">1980</span>
-                <span class="genres">Crime / Drama / Thriller</span>
-                <img src="img/star.svg" alt="" class="star">
-                <span class="score">8.4</span>
-            </div>
+      <img class="movie-poster" src="img/Rectangle 2.svg" alt="" />
+      <div class="hover-preview">
+        <span class="title">The Godfather Part III</span>
+        <span class="year">1980</span>
+        <span class="genres">Crime / Drama / Thriller</span>
+        <img src="img/star.svg" alt="" class="star" />
+        <span class="score">8.4</span>
+      </div>
     </template>
-
-</head>
-<body>
+  </head>
+  <body>
     <div class="movie-popup hidden">
-        <img class="close-button" src="img/close button.svg" alt="">
-        <div class="movie-popup-container">
-            <img class="movie-poster" src="img/Rectangle 2.svg" alt="">
-            <div class="movie-popup-container-container">
-                <span class="title">THE GODFATHER</span>
-                <span class="year">1972</span>
-                <div class="score">
-                    <img src="img/star.svg" alt="">
-                    <span>8.7</span>
-                </div>
-                <span class="genres">CRIME / DRAMA</span>
-                <p class="synopsis">Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.</p>
-                <div class="cast-container">
-                    <span>CAST: </span>
-                    <p>Marlon Brando, Al Pacino, James Caan, Robert Duvall</p>
-                </div>
-            </div>
+      <img class="close-button" src="img/close button.svg" alt="" />
+      <div class="movie-popup-container">
+        <img class="movie-poster" src="img/Rectangle 2.svg" alt="" />
+        <div class="movie-popup-container-container">
+          <span class="title">THE GODFATHER</span>
+          <span class="year">1972</span>
+          <div class="score">
+            <img src="img/star.svg" alt="" />
+            <span>8.7</span>
+          </div>
+          <span class="genres">CRIME / DRAMA</span>
+          <p class="synopsis">
+            Spanning the years 1945 to 1955, a chronicle of the fictional
+            Italian-American Corleone crime family. When organized crime family
+            patriarch, Vito Corleone barely survives an attempt on his life, his
+            youngest son, Michael steps in to take care of the would-be killers,
+            launching a campaign of bloody revenge.
+          </p>
+          <div class="cast-container">
+            <span>CAST: </span>
+            <p>Marlon Brando, Al Pacino, James Caan, Robert Duvall</p>
+          </div>
         </div>
+      </div>
     </div>
     <div class="login-popup hidden register-login-popup">
-        <img src="img/close button.svg" alt="">
-        <div class="popup-container">
-            <div class="switch-buttons">
-                <div class="signup-switch-button "><span>SIGN UP</span></div>
-                <div class="login-switch-button currently-in-use"><span>LOGIN</span></div>
-            </div>
-            <input type="text" placeholder="Username" class="username">
-            <input type="text" placeholder="Password" class="password">
-            <div class="checkbox-container">
-                <input type="checkbox" name="remember" id="remember">
-                <span>Remember me</span>
-            </div>
-            <div class="login-button"><span>LOGIN</span></div>
-            <a href="#">I forgot my password</a>
-            <span class="not-member-yet">Not a member yet? <a href="#">Sign up</a></span>
+      <img src="img/close button.svg" alt="" />
+      <div class="popup-container">
+        <div class="switch-buttons">
+          <div class="signup-switch-button"><span>SIGN UP</span></div>
+          <div class="login-switch-button currently-in-use">
+            <span>LOGIN</span>
+          </div>
         </div>
+        <input type="text" placeholder="Username" class="username" />
+        <input type="text" placeholder="Password" class="password" />
+        <div class="checkbox-container">
+          <input type="checkbox" name="remember" id="remember" />
+          <span>Remember me</span>
+        </div>
+        <div class="login-button"><span>LOGIN</span></div>
+        <a href="#">I forgot my password</a>
+        <span class="not-member-yet"
+          >Not a member yet? <a href="#">Sign up</a></span
+        >
+      </div>
     </div>
     <div class="register-popup hidden register-login-popup">
-        <img src="img/close button.svg" alt="">
-        <div class="popup-container">
-            <div class="switch-buttons">
-                <div class="signup-switch-button currently-in-use"><span>SIGN UP</span></div>
-                <div class="login-switch-button"><span>LOGIN</span></div>
-            </div>
-            <input type="text" placeholder="Username" class="username">
-            <input type="text" placeholder="Email" class="email">
-            <input type="text" placeholder="Password" class="password">
-            <input type="text" placeholder="Confirm your password" class="passwordconf">
-            <div class="signup-button"><span>SIGN UP</span></div>
+      <img src="img/close button.svg" alt="" />
+      <div class="popup-container">
+        <div class="switch-buttons">
+          <div class="signup-switch-button currently-in-use">
+            <span>SIGN UP</span>
+          </div>
+          <div class="login-switch-button"><span>LOGIN</span></div>
         </div>
+        <input type="text" placeholder="Username" class="username" />
+        <input type="text" placeholder="Email" class="email" />
+        <input type="text" placeholder="Password" class="password" />
+        <input
+          type="text"
+          placeholder="Confirm your password"
+          class="passwordconf"
+        />
+        <div class="signup-button"><span>SIGN UP</span></div>
+      </div>
     </div>
     <header>
-        <div class="header-wrapper">
-            <img src="img/BeMovies.svg" alt="BeMovies Logo">
-            <div class="menu-wrapper">
-                <div class="burger">
-                    <span id="burger-patty"></span>
-                    <span id="burger-patty"></span>
-                    <span id="burger-patty"></span>
-                </div>
-                <ul>
-                    <li class="menu-element"><a class="menu-text" id="search" href="#">Search</a></li>
-                    <li class="menu-element"><a class="menu-text" id="latest" href="#">Latest</a></li>
-                    <li class="menu-element"><a class="menu-text" id="genres" href="#">Genres</a></li>
-                    <li class="menu-element"><a class="menu-text" id="register" href="#">Register</a></li>
-                    <li class="menu-element"><a class="menu-text" id="login" href="#">Login</a></li>
-                </ul>
-            </div>
+      <div class="header-wrapper">
+        <img src="img/BeMovies.svg" alt="BeMovies Logo" />
+        <div class="menu-wrapper">
+          <div class="burger">
+            <span id="burger-patty"></span>
+            <span id="burger-patty"></span>
+            <span id="burger-patty"></span>
+          </div>
+          <ul>
+            <li class="menu-element">
+              <a class="menu-text" id="search" href="#">Search</a>
+            </li>
+            <li class="menu-element">
+              <a class="menu-text" id="latest" href="#">Latest</a>
+            </li>
+            <li class="menu-element">
+              <a class="menu-text" id="genres" href="#">Genres</a>
+            </li>
+            <li class="menu-element">
+              <a class="menu-text" id="register" href="#">Register</a>
+            </li>
+            <li class="menu-element">
+              <a class="menu-text" id="login" href="#">Login</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </header>
     <main>
-        <div class="search-box">
-            <div class="input-wrapper">
-                <input type="text" class="search-box-input">
-                <div class="search-box-input-submit">
-                    <img src="img/arrow.svg">
-                </div>
-            </div>
+      <div class="search-box">
+        <div class="input-wrapper">
+          <input type="text" class="search-box-input" />
+          <div class="search-box-input-submit">
+            <img src="img/arrow.svg" />
+          </div>
         </div>
-        <div class="results-container reusable-swiper-container">
-            <span class="small-text">Results for </span>
-            <!-- Slider main container -->
-            <div class="swiper swiper1">
+      </div>
+      <div class="results-container reusable-swiper-container">
+        <span class="small-text">Results for </span>
+        <!-- Slider main container -->
+        <div class="swiper swiper1">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img class="movie-poster" src="img/Rectangle 2.svg" alt="" />
+              <div class="hover-preview"></div>
+            </div>
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev swiper-prev1"></div>
+          <div class="swiper-button-next swiper-next1"></div>
+        </div>
+      </div>
+      <div class="latest-container reusable-swiper-container">
+        <span class="small-text">Latest Releases</span>
+        <!-- Slider main container -->
+        <div class="swiper swiper2">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img class="movie-poster" src="img/Rectangle 2.svg" alt="" />
+              <div class="hover-preview"></div>
+            </div>
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev swiper-prev2"></div>
+          <div class="swiper-button-next swiper-next2"></div>
+        </div>
+      </div>
+      <div class="categories-container">
+        <div class="text-container">
+          <span class="small-text top-span">Movies by genre</span>
+          <div class="genres-container">
+            <ul>
+              <li>
+                <div class="selected">
+                  <span class="small-text" id="comedy">Comedy</span>
+                </div>
+              </li>
+              <li>
+                <div><span class="small-text" id="drama">Drama</span></div>
+              </li>
+              <li>
+                <div><span class="small-text" id="action">Action</span></div>
+              </li>
+              <li>
+                <div><span class="small-text" id="romance">Romance</span></div>
+              </li>
+              <li>
+                <div><span class="small-text" id="fantasy">Fantasy</span></div>
+              </li>
+              <li>
+                <div>
+                  <span class="small-text" id="animation">Animation</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="genres-line"></div>
+        </div>
+        <div class="categories-swiper-container reusable-swiper-container">
+          <span class="small-text">Comedy</span>
+          <!-- Slider main container -->
+          <div class="swiper swiper3">
             <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img class="movie-poster" src="img/Rectangle 2.svg" alt="">
-                        <div class="hover-preview">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev swiper-prev1"></div>
-                <div class="swiper-button-next swiper-next1"></div>
-
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img class="movie-poster" src="img/Rectangle 2.svg" alt="" />
+                <div class="hover-preview"></div>
+              </div>
             </div>
 
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev swiper-prev3"></div>
+            <div class="swiper-button-next swiper-next3"></div>
+          </div>
         </div>
-        <div class="latest-container reusable-swiper-container">
-            <span class="small-text">Latest Releases</span>
-            <!-- Slider main container -->
-            <div class="swiper swiper2">
-            <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img class="movie-poster" src="img/Rectangle 2.svg" alt="">
-                        <div class="hover-preview">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev swiper-prev2"></div>
-                <div class="swiper-button-next swiper-next2"></div>
-
-            </div>
-
-        </div>
-        <div class="categories-container">
-            <div class="text-container">
-                <span class="small-text top-span">Movies by genre</span>
-                <div class="genres-container">
-                    <ul>
-                        <li>
-                            <div class="selected"><span class="small-text" id="comedy" >Comedy</span></div>
-                        </li>
-                        <li>
-                            <div><span class="small-text" id="drama" >Drama</span></div>
-                        </li>
-                        <li>
-                            <div><span class="small-text" id="action" >Action</span></div>
-                        </li>
-                        <li>
-                            <div><span class="small-text" id="romance" >Romance</span></div>
-                        </li>
-                        <li>
-                            <div><span class="small-text" id="fantasy" >Fantasy</span></div>
-                        </li>
-                        <li>
-                            <div><span class="small-text" id="animation" >Animation</span></div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="genres-line"></div>
-            </div>
-            <div class="categories-swiper-container reusable-swiper-container">
-                <span class="small-text">Comedy</span>
-                <!-- Slider main container -->
-                <div class="swiper swiper3">
-                <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img class="movie-poster" src="img/Rectangle 2.svg" alt="">
-                        <div class="hover-preview">
-                        </div>
-                    </div>
-                </div>
-
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev swiper-prev3"></div>
-                    <div class="swiper-button-next swiper-next3"></div>
-
-                </div>
-
-            </div>
-        </div>
+      </div>
     </main>
     <footer>
-        <div class="footer-wrapper">
-            <img src="img/BeMovies.svg" alt="BeMovies Logo">
-            
-            <div class="burger">
-                <span id="burger-patty"></span>
-                <span id="burger-patty"></span>
-                <span id="burger-patty"></span>
-            </div>
-            <ul>
-                <li class="menu-element"><a class="menu-text" id="search" href="#">Search</a></li>
-                <li class="menu-element"><a class="menu-text" id="latest" href="#">Latest</a></li>
-                <li class="menu-element"><a class="menu-text" id="genres" href="#">Genres</a></li>
-                <li class="menu-element"><a class="menu-text" id="register" href="#">Register</a></li>
-                <li class="menu-element"><a class="menu-text" id="login" href="#">Login</a></li>
-            </ul>
-            <div><span>@2023 - All rights reserved</span></div>
+      <div class="footer-wrapper">
+        <img src="img/BeMovies.svg" alt="BeMovies Logo" />
+
+        <div class="burger">
+          <span id="burger-patty"></span>
+          <span id="burger-patty"></span>
+          <span id="burger-patty"></span>
         </div>
+        <ul>
+          <li class="menu-element">
+            <a class="menu-text" id="search" href="#">Search</a>
+          </li>
+          <li class="menu-element">
+            <a class="menu-text" id="latest" href="#">Latest</a>
+          </li>
+          <li class="menu-element">
+            <a class="menu-text" id="genres" href="#">Genres</a>
+          </li>
+          <li class="menu-element">
+            <a class="menu-text" id="register" href="#">Register</a>
+          </li>
+          <li class="menu-element">
+            <a class="menu-text" id="login" href="#">Login</a>
+          </li>
+        </ul>
+        <div><span>@2023 - All rights reserved</span></div>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/app.js"></script>
-</body>
+  </body>
 </html>
