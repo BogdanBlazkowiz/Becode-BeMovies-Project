@@ -156,7 +156,7 @@ function displayMovies(movies, swiperSelector) {
     moviePoster.classList.add("movie-poster");
     moviePoster.src = movie.poster_path
       ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-      : "img/Rectangle 2.svg";
+      : "img/no-image.png";
     moviePoster.alt = movie.title;
 
     const hoverPreview = document.createElement("div");
@@ -248,11 +248,16 @@ function getGenreName(id) {
 }
 
 // Function to open modal with movie details
-function openModal(movie) {
+async function openModal(movie) {
+  const apiKey = "f90cc86e391c225e3d7df621f0959f32";
+
+  // Replace with your TMDb API key
+
+  // Set up the modal content
   const modal = document.querySelector(".movie-popup");
   modal.querySelector(".movie-poster").src = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "img/Rectangle 2.svg";
+    : "img/no-image.png";
   modal.querySelector(".title").textContent = movie.title;
   modal.querySelector(".year").textContent = movie.release_date
     ? new Date(movie.release_date).getFullYear()
@@ -265,8 +270,25 @@ function openModal(movie) {
     : "Unknown";
   modal.querySelector(".synopsis").textContent = movie.overview;
 
+  // Fetch cast data
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=${apiKey}`
+    );
+    const data = await response.json();
+    const cast = data.cast;
+
+    // Display cast
+    const castContainer = modal.querySelector(".cast-container p");
+    castContainer.textContent = cast.map((actor) => actor.name).join(", ") + ".";
+  } catch (error) {
+    console.error("Error fetching cast data:", error);
+  }
+
+  // Show the modal
   modal.classList.remove("hidden");
 
+  // Close modal on close button click
   const closeButton = modal.querySelector(".close-button");
   closeButton.addEventListener("click", () => {
     modal.classList.add("hidden");
