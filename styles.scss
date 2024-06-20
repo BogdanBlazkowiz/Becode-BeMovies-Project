@@ -562,6 +562,14 @@ header {
                 z-index: 1;
                 }
             }
+            .close-icon img{
+                display: none;
+                width: 50px !important;
+                position: relative;
+                left: 15.97vw;
+                top: 10px;
+                transition: left 0.5s;
+            }
             ul {
                 margin-top: 16px;
                 display: flex;
@@ -634,7 +642,8 @@ main {
     display: grid;
     padding-top: 73px;
     gap: 72px;
-    grid-template-rows: 44px 380px 380px 519px;
+    //grid-template-rows: 44px 380px 380px 519px;
+    grid-template-rows: 44px 380px 519px;
     .search-box {
         padding: 0 calc(0.5 * calc(70vw - 15.83vw - 3.06vw));
         .input-wrapper {
@@ -934,6 +943,7 @@ footer {
             z-index: 1;
             }
         }
+
         ul {
             margin-top: 16px;
             grid-column: 3/3;

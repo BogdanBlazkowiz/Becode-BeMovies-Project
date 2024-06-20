@@ -22,10 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Function to fetch and display movies based on search keyword
 async function searchMovieByKeyword(keyword) {
-  let resultsWord = document.querySelector(".results-container span");
-  resultsWord.innerText = `Results for "${keyword}"`;
 
-  let resultsContainer = document.querySelector(".results-container");
+    let resultsWord = document.querySelector(".results-container span");
+    let mainGrid = document.querySelector("main");
+    let searchInput = document.querySelector(".search-box-input");
+    let resultsContainer = document.querySelector(".results-container");
+    
+    if(keyword === null || keyword === undefined || keyword.trim() === '') {
+            searchInput.placeholder = "Please enter a word";
+            mainGrid.gridTemplateRows = "44px 380px 519px";
+            resultsContainer.style.display = "none";
+        return;
+    }
+
+  resultsWord.innerText = `Results for "${keyword}"`;
+  mainGrid.gridTemplateRows = "44px 380px 380px 519px";
+
+
   resultsContainer.style.display = "grid";
 
   const options = {
@@ -38,7 +51,7 @@ async function searchMovieByKeyword(keyword) {
 
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(keyword)}&include_adult=false&language=en-US&page=1`,
       options
     );
 
@@ -206,8 +219,19 @@ function displayMovies(movies, swiperSelector) {
   });
 
   new Swiper(swiperSelector, {
-    slidesPerView: 4,
-    spaceBetween: 5,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+        500:{
+            slidesPerView:2,
+        },
+        768:{
+            slidesPerView:3,
+        },
+        1250: {
+            slidesPerView:4,
+        },
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -309,8 +333,8 @@ fetchLatestMovies();
 //form login and signup
 document.addEventListener("DOMContentLoaded", function () {
   // Get elements
-  const loginLink = document.getElementById("login");
-  const registerLink = document.getElementById("register");
+  const loginLink = document.querySelectorAll("#login, #login-footer");
+  const registerLink = document.querySelectorAll("#register, #register-footer");
   const loginPopup = document.querySelector(".login-popup");
   const registerPopup = document.querySelector(".register-popup");
   const closeButtons = document.querySelectorAll(".register-login-popup img");
@@ -340,14 +364,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Add event listeners to the navbar links
-  loginLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    showLoginForm();
+  loginLink.forEach((link) => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        showLoginForm();
+    });
   });
 
-  registerLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    showRegisterForm();
+  registerLink.forEach((link) => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        showRegisterForm();
+    });
   });
 
   // Add event listeners to switch buttons
@@ -366,6 +394,8 @@ document.addEventListener("DOMContentLoaded", function () {
       registerPopup.classList.add("hidden");
     });
   });
+
+
 
   // Basic validation and logging for login form
   document
@@ -419,4 +449,62 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Registration successful!");
       }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to toggle the visibility of the menu
+    function toggleMenu(menuWrapper, burger, closeButton) {
+        menuWrapper.style.display = 'block';
+        burger.style.display = 'none';
+        closeButton.style.display = 'block';
+    }
+
+    // Function to hide the menu
+    function hideMenu(menuWrapper, burger, closeButton) {
+        menuWrapper.style.display = 'none';
+        burger.style.display = 'block';
+        closeButton.style.display = 'none';
+    }
+
+    // Function to handle screen size changes
+    function handleResize() {
+        document.querySelectorAll('.menu-wrapper').forEach(menuWrapper => {
+            const burger = menuWrapper.querySelector('.burger');
+            const closeButton = menuWrapper.querySelector('.close-icon img');
+            const menuList = menuWrapper.querySelector('ul');
+            if (window.innerWidth < 1100) {
+                burger.style.display = 'block';
+                menuList.style.display = 'none';
+                closeButton.style.display = 'none';
+            } else {
+                burger.style.display = 'none';
+                menuList.style.display = 'flex'; // Ensure the menu is visible on larger screens
+                closeButton.style.display = 'none';
+            }
+        });
+    }
+
+    // Event listener for the burger menu click
+    document.querySelectorAll('.burger').forEach(burger => {
+        burger.addEventListener('click', function (e) {
+            e.stopPropagation();  // Prevent the click event from bubbling up to the document
+            const menuWrapper = burger.parentElement.querySelector('ul');
+            const closeButton = burger.parentElement.querySelector('.close-icon img');
+            toggleMenu(menuWrapper, burger, closeButton);
+        });
+    });
+
+    // Event listener for the close button click
+    document.querySelectorAll('.close-icon img').forEach(closeButton => {
+        closeButton.addEventListener('click', function (e) {
+            e.stopPropagation();  // Prevent the click event from bubbling up to the document
+            const menuWrapper = closeButton.parentElement.parentElement.querySelector('ul');
+            const burger = closeButton.parentElement.parentElement.querySelector('.burger');
+            hideMenu(menuWrapper, burger, closeButton);
+        });
+    });
+
+    // Initial setup and event listener for window resize
+    window.addEventListener('resize', handleResize);
+    handleResize();
 });
