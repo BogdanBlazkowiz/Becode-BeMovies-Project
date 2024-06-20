@@ -560,6 +560,14 @@ header .header-wrapper .menu-wrapper .burger #burger-patty {
   border-radius: 3px;
   z-index: 1;
 }
+header .header-wrapper .menu-wrapper .close-icon img {
+  display: none;
+  width: 50px !important;
+  position: relative;
+  left: 15.97vw;
+  top: 10px;
+  transition: left 0.5s;
+}
 header .header-wrapper .menu-wrapper ul {
   margin-top: 16px;
   display: flex;
@@ -605,7 +613,7 @@ main {
   display: grid;
   padding-top: 73px;
   gap: 72px;
-  grid-template-rows: 44px 380px 380px 519px;
+  grid-template-rows: 44px 380px 519px;
 }
 main .search-box {
   padding: 0 25.555vw;
