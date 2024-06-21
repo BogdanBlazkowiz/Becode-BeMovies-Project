@@ -222,10 +222,10 @@ function displayMovies(movies, swiperSelector) {
     slidesPerView: 1,
     spaceBetween: 20,
     breakpoints: {
-        500:{
+        625:{
             slidesPerView:2,
         },
-        768:{
+        937.5:{
             slidesPerView:3,
         },
         1250: {
