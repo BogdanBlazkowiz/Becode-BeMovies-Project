@@ -573,6 +573,10 @@ header {
             ul {
                 margin-top: 16px;
                 display: flex;
+                background-color: $background_dark;
+                padding: 20px;
+                border-radius: 20px;
+                width: fit-content;
                 gap: 2.15vw;
                 .menu-element {
                     a {
@@ -735,7 +739,7 @@ main {
             grid-template-rows: 1fr 1fr 1fr;
             .movie-poster {
                 width: 100%;
-                height: 351px;
+                // height: 351px;
                 grid-column: 1/1;
                 grid-row: 2/2;
             }

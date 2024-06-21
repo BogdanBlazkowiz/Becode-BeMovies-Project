@@ -571,6 +571,11 @@ header .header-wrapper .menu-wrapper .close-icon img {
 header .header-wrapper .menu-wrapper ul {
   margin-top: 16px;
   display: flex;
+  background-color: #141517;
+  padding: 20px;
+  border-radius: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
   gap: 2.15vw;
 }
 header .header-wrapper .menu-wrapper ul .menu-element a {
