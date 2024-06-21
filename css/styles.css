@@ -117,7 +117,8 @@ body {
   grid-column: 2/2;
   grid-row: 1/1;
   display: grid;
-  grid-template-rows: auto 17px 21px 21px 17px 17px 13px auto 33px 34px;
+  grid-template-rows: auto 17px 21px 21px 17px auto 13px auto 33px auto;
+  padding-bottom: 10px;
 }
 .movie-popup .movie-popup-container .movie-popup-container-container .title {
   grid-row: 1/1;
@@ -528,27 +529,25 @@ header, main, footer {
 header {
   background-color: #141517;
   height: 100px;
-  padding-top: 26px;
 }
 header .header-wrapper {
-  display: grid;
-  padding-right: 12.5%;
-  grid-template-columns: 163px 37.71vw 25.97vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28.5px;
 }
 header .header-wrapper img {
   width: 163px;
   height: 43px;
 }
-header .header-wrapper .menu-wrapper {
-  grid-column: 3/3;
-}
 header .header-wrapper .menu-wrapper .burger {
   display: none;
   width: 33px;
   position: relative;
-  left: 15.97vw;
+  padding-left: 12.5vw;
   top: 10px;
   transition: left 0.5s;
+  cursor: pointer;
 }
 header .header-wrapper .menu-wrapper .burger #burger-patty {
   display: block;
@@ -567,10 +566,14 @@ header .header-wrapper .menu-wrapper .close-icon img {
   left: 15.97vw;
   top: 10px;
   transition: left 0.5s;
+  cursor: pointer;
 }
 header .header-wrapper .menu-wrapper ul {
-  margin-top: 16px;
   display: flex;
+  background-color: #141517;
+  border-radius: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
   gap: 2.15vw;
 }
 header .header-wrapper .menu-wrapper ul .menu-element a {
@@ -596,17 +599,8 @@ header .header-wrapper .menu-wrapper ul .menu-element a:hover {
     display: block;
   }
   header .header-wrapper .menu-wrapper ul {
+    background-color: #282e3f;
     display: none;
-  }
-}
-@media screen and (max-width: 650px) {
-  header .header-wrapper .menu-wrapper .burger {
-    left: 10vw;
-  }
-}
-@media screen and (max-width: 530px) {
-  header .header-wrapper .menu-wrapper .burger {
-    left: -5vw;
   }
 }
 main {
@@ -617,6 +611,7 @@ main {
 }
 main .search-box {
   padding: 0 25.555vw;
+  cursor: pointer;
 }
 main .search-box .input-wrapper {
   display: flex;
@@ -694,6 +689,7 @@ main .search-box .input-wrapper div img {
 }
 .swiper .swiper-wrapper .swiper-slide {
   display: grid;
+  cursor: pointer;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
@@ -712,7 +708,7 @@ main .search-box .input-wrapper div img {
   display: grid;
   display: none;
   grid-template-columns: auto 13.888888888vw auto;
-  grid-template-rows: 46px 23px 23px 23px 23px 18px 34px 8px 39px;
+  grid-template-rows: repeat(9, auto);
 }
 .swiper .swiper-wrapper .swiper-slide .hover-preview * {
   grid-column: 2/2;
@@ -834,6 +830,11 @@ main .search-box .input-wrapper div img {
   gap: 1.5vw;
   grid-template-columns: auto auto auto auto auto auto;
   grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+}
+.categories-container .text-container .genres-container ul li {
+  cursor: pointer;
 }
 .categories-container .text-container .genres-container ul li div:hover {
   opacity: 0.7;
@@ -902,12 +903,13 @@ main .search-box .input-wrapper div img {
 footer {
   background-color: #141517;
   height: 100px;
-  padding-top: 26px;
   margin-top: 109px;
 }
 footer .footer-wrapper {
-  display: grid;
-  padding-right: 12.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 28.5px;
   grid-template-columns: 163px 13.61vw 25.97vw 12.78vw;
   grid-template-rows: 33px 33px;
 }
@@ -916,7 +918,6 @@ footer .footer-wrapper img {
   height: 43px;
 }
 footer .footer-wrapper ul {
-  margin-top: 16px;
   grid-column: 3/3;
   display: grid;
   grid-template-rows: 1fr;
@@ -956,16 +957,21 @@ footer .footer-wrapper div span {
   }
 }
 @media screen and (max-width: 1000px) {
-  footer {
-    grid-template-columns: 163px 13.61vw 44.83vw;
+  footer .footer-wrapper {
+    grid-template-columns: 163px 7.61vw 44.83vw;
   }
   footer ul {
     gap: 3.71vw;
   }
 }
 @media screen and (max-width: 950px) {
+  footer .footer-wrapper {
+    display: grid;
+  }
   footer .footer-wrapper ul {
     grid-template-columns: 1fr 1fr;
+    padding-top: 20px;
+    padding-right: 100px;
   }
   footer .footer-wrapper div {
     grid-column: 1/1;
