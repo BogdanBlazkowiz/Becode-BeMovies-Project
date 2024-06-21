@@ -811,10 +811,10 @@ main {
         }
     }
     .swiper-button-prev {
-        content: url(/img/previous-button.svg);
+        content: "";
     }
     .swiper-button-next {
-        content: url(/img/next-button.svg);
+        content: "";
     }
     .backgroundArrowRight{
         position: absolute;
@@ -838,7 +838,7 @@ main {
         position: absolute;
         left: 0;
         top: 50%;
-        background-image: url('./img/previous-button.svg');
+        background-image: url('../img/previous-button.svg');
         background-repeat: no-repeat;
         background-position: center left;
     }
@@ -846,7 +846,7 @@ main {
         position: absolute;
         right: 0;
         top: 50%;
-        background-image: url('./img/next-button.svg');
+        background-image: url('../img/next-button.svg');
         background-repeat: no-repeat;
         background-position: center left;
     }
@@ -1038,7 +1038,6 @@ footer {
 
 @media screen and (max-width: 1000px) {
     footer {
-        
         .footer-wrapper {
             grid-template-columns: 163px 7.61vw 44.83vw;
         }

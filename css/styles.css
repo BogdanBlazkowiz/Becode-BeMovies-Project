@@ -758,10 +758,10 @@ main .search-box .input-wrapper div img {
   color: #CC0000;
 }
 .swiper .swiper-button-prev {
-  content: url(/img/previous-button.svg);
+  content: "";
 }
 .swiper .swiper-button-next {
-  content: url(/img/next-button.svg);
+  content: "";
 }
 .swiper .backgroundArrowRight {
   position: absolute;
@@ -785,7 +785,7 @@ main .search-box .input-wrapper div img {
   position: absolute;
   left: 0;
   top: 50%;
-  background-image: url("./img/previous-button.svg");
+  background-image: url("../img/previous-button.svg");
   background-repeat: no-repeat;
   background-position: center left;
 }
@@ -793,7 +793,7 @@ main .search-box .input-wrapper div img {
   position: absolute;
   right: 0;
   top: 50%;
-  background-image: url("./img/next-button.svg");
+  background-image: url("../img/next-button.svg");
   background-repeat: no-repeat;
   background-position: center left;
 }
