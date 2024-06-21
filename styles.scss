@@ -3,6 +3,8 @@
 
 $background_dark: #141517;
 $background_not_as_dark: #191B20;
+$background_not_as_dark_not_as_dark: #282e3f;
+
 $red: #CC0000;
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -113,7 +115,8 @@ body {
             grid-column: 2/2;
             grid-row: 1/1;
             display: grid;
-            grid-template-rows: auto 17px 21px 21px 17px 17px 13px auto 33px 34px;
+            grid-template-rows: auto 17px 21px 21px 17px auto 13px auto 33px auto;
+            padding-bottom: 10px;
             .title {
                 grid-row: 1/1;
                 font-family: Inria Sans;
@@ -531,25 +534,25 @@ header, main, footer {
 header {
     background-color: $background_dark;
     height: 100px;
-    padding-top: 26px;
     .header-wrapper {
-        display: grid;
-        padding-right: 12.5%;
-        grid-template-columns: 163px 37.71vw 25.97vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 28.5px;
         img {
             width: 163px;
             height: 43px;
         }
 
         .menu-wrapper {
-            grid-column: 3/3;
             .burger {
                 display: none;
                 width: 33px;
                 position: relative;
-                left: 15.97vw;
+                padding-left: 12.5vw;
                 top: 10px;
                 transition: left 0.5s;
+                cursor: pointer;
                 #burger-patty
                 {
                 display: block;
@@ -569,12 +572,11 @@ header {
                 left: 15.97vw;
                 top: 10px;
                 transition: left 0.5s;
+                cursor: pointer;
             }
             ul {
-                margin-top: 16px;
                 display: flex;
                 background-color: $background_dark;
-                padding: 20px;
                 border-radius: 20px;
                 width: fit-content;
                 gap: 2.15vw;
@@ -608,9 +610,11 @@ header {
         .header-wrapper {
             .menu-wrapper {
                 .burger {
+                    // left: 5vw;
                     display: block;
                 }
                 ul {
+                    background-color: $background_not_as_dark_not_as_dark;
                     display: none;
                 }
             }
@@ -623,7 +627,7 @@ header {
         .header-wrapper {
             .menu-wrapper {
                 .burger {
-                    left: 10vw;
+                    // left: 10vw;
                 }
             }
         }
@@ -635,7 +639,7 @@ header {
         .header-wrapper {
             .menu-wrapper {
                 .burger {
-                    left: -5vw;
+                    // left: -5vw;
                 }
             }
         }
@@ -650,6 +654,7 @@ main {
     grid-template-rows: 44px 380px 519px;
     .search-box {
         padding: 0 calc(0.5 * calc(70vw - 15.83vw - 3.06vw));
+        cursor: pointer;
         .input-wrapper {
             display: flex;
             input {
@@ -735,11 +740,12 @@ main {
         }
         .swiper-slide {
             display: grid;
+            cursor: pointer;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr 1fr;
             .movie-poster {
                 width: 100%;
-                // height: 351px;
+                height: 351px;
                 grid-column: 1/1;
                 grid-row: 2/2;
             }
@@ -752,7 +758,8 @@ main {
                 display: grid;
                 display: none;
                 grid-template-columns: auto 13.888888888vw auto;
-                grid-template-rows: 46px 23px 23px 23px 23px 18px 34px 8px 39px;
+                // grid-template-rows: 46px 23px 23px 23px 23px 18px 34px 8px 39px;
+                grid-template-rows: repeat(9, auto);
                 * {
                     grid-column: 2/2;
                     padding: 0;
@@ -876,7 +883,10 @@ main {
                 gap: 1.5vw;
                 grid-template-columns: auto auto auto auto auto auto;
                 grid-template-rows: auto;
+                justify-items: center;
+                align-items: center;
                 li {
+                    cursor: pointer;
                     div:hover {
                         opacity: 0.7;
                         background-color: $background_dark;
@@ -970,11 +980,12 @@ main {
 footer {
     background-color: $background_dark;
     height: 100px;
-    padding-top: 26px;
     margin-top: 109px;
     .footer-wrapper {
-        display: grid;
-        padding-right: 12.5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 28.5px;
         grid-template-columns: 163px 13.61vw 25.97vw 12.78vw;
         grid-template-rows: 33px 33px;
         img {
@@ -982,7 +993,6 @@ footer {
             height: 43px;
         }
         ul {
-            margin-top: 16px;
             grid-column: 3/3;
             display: grid;
             grid-template-rows: 1fr;
@@ -1028,7 +1038,10 @@ footer {
 
 @media screen and (max-width: 1000px) {
     footer {
-        grid-template-columns: 163px 13.61vw 44.83vw;
+        
+        .footer-wrapper {
+            grid-template-columns: 163px 7.61vw 44.83vw;
+        }
         ul {
             gap: 3.71vw;
         }
@@ -1038,8 +1051,11 @@ footer {
 @media screen and (max-width: 950px) {
     footer {
         .footer-wrapper {
+            display: grid;
             ul {
                 grid-template-columns: 1fr 1fr;
+                padding-top: 20px;
+                padding-right: 100px;
             }
             div {
                 grid-column: 1/1;
