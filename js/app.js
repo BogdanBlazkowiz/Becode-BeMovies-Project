@@ -312,10 +312,16 @@ async function openModal(movie) {
   // Show the modal
   modal.classList.remove("hidden");
 
+  //Add overflow hidden to the body
+  let body = document.querySelector("body");
+  body.style.overflowY = "hidden";
+
   // Close modal on close button click
   const closeButton = modal.querySelector(".close-button");
   closeButton.addEventListener("click", () => {
     modal.classList.add("hidden");
+    //Activer l'overlow auto sur le body
+    body.style.overflowY = "auto";
   });
 }
 
