@@ -563,7 +563,7 @@ header .header-wrapper .menu-wrapper .close-icon img {
   display: none;
   width: 50px !important;
   position: relative;
-  left: 15.97vw;
+  padding-left: 12.5vw;
   top: 10px;
   transition: left 0.5s;
   cursor: pointer;
@@ -601,6 +601,9 @@ header .header-wrapper .menu-wrapper ul .menu-element a:hover {
   header .header-wrapper .menu-wrapper ul {
     background-color: #282e3f;
     display: none;
+    position: absolute;
+    top: 20px;
+    padding: 20px;
   }
 }
 main {

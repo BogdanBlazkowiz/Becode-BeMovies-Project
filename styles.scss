@@ -569,7 +569,7 @@ header {
                 display: none;
                 width: 50px !important;
                 position: relative;
-                left: 15.97vw;
+                padding-left: 12.5vw;
                 top: 10px;
                 transition: left 0.5s;
                 cursor: pointer;
@@ -616,30 +616,9 @@ header {
                 ul {
                     background-color: $background_not_as_dark_not_as_dark;
                     display: none;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 650px) {
-    header {
-        .header-wrapper {
-            .menu-wrapper {
-                .burger {
-                    // left: 10vw;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 530px) {
-    header {
-        .header-wrapper {
-            .menu-wrapper {
-                .burger {
-                    // left: -5vw;
+                    position: absolute;
+                    top: 20px;
+                    padding: 20px;
                 }
             }
         }
