@@ -323,6 +323,16 @@ async function openModal(movie) {
     //Activer l'overlow auto sur le body
     body.style.overflowY = "auto";
   });
+
+  //close if click outsite the modal
+  body.addEventListener("click", (e)=> {
+    e.preventDefault();
+    if (e.target != modal && !modal.contains(e.target)) {
+      modal.classList.add("hidden");
+      //Activer l'overlow auto sur le body
+      body.style.overflowY = "auto";
+    }
+  });
 }
 
 // Search button event listener
