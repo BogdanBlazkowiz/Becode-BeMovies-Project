@@ -1,4 +1,4 @@
-# BECODE-BEMOVIES-PROJECT-MATTHIEU
+# Becode-BeMovies-Project
 
 A movie carousel app, it queries the TheMovieDB for info about specified or simply latest movies.
 Pure front-end, done using html, css and js with no frameworks.
